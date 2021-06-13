@@ -1,0 +1,57 @@
+<div class="title-section">
+  <span>Ingresar</span>
+</div>
+
+<section class="container">
+  <form class="form" [formGroup]="loginForm">
+    <div class="form__control">
+      <app-custom-input-text
+        [inputType]="'text'"
+        [inputPlaceholder]="'Usuario'"
+        formControlName="username"
+      ></app-custom-input-text>
+
+      <div class="error" *ngIf="isInvalidFormGroupInput('username')">
+        <p class="error__text" *ngIf="formlogin.username.errors.required">
+          El campo es requerido
+        </p>
+        <p class="error__text" *ngIf="formlogin.username.errors.pattern">
+          Formato incorrecto
+        </p>
+      </div>
+    </div>
+
+    <div class="form__control">
+      <app-custom-input-text
+        [inputType]="'password'"
+        [inputPlaceholder]="'Contraseña'"
+        formControlName="password"
+      ></app-custom-input-text>
+
+      <div class="error" *ngIf="isInvalidFormGroupInput('password')">
+        <p class="error__text" *ngIf="formlogin.password.errors.required">
+          El campo es requerido
+        </p>
+        <p class="error__text" *ngIf="formlogin.password.errors.minlength">
+          Debe ingresar minimo 6 caracteres
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <button
+        [ngClass]="{
+          'btn-primary--enabled': loginForm.valid,
+          'btn-primary--disabled': !loginForm.valid
+        }"
+        (click)="login()"
+      >
+        Ingresar
+      </button>
+    </div>
+
+    <div class="warning" *ngIf="feedbackMessage">
+      <p class="warning__text">{{ feedbackMessage }}</p>
+    </div>
+  </form>
+</section>

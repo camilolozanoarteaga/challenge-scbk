@@ -1,0 +1,29 @@
+.data-table {
+  margin: 10px 10px;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+.data-table td,
+.data-table th {
+  border: 1px solid var(--gray-color);
+  padding: 8px;
+  font-weight: 300;
+  font-size: 12pt;
+}
+
+.data-table tr:nth-child(even) {
+  background-color: var(--backgroung);
+}
+
+.data-table tr:hover {
+  background-color: var(--gray-color);
+}
+
+.data-table th {
+  text-align: left;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 400;
+  font-size: 12pt;
+}
