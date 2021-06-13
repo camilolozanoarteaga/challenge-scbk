@@ -28,12 +28,12 @@ if (HTTPS_ENABLED === 'true') {
 app.use(compression());
 // Run the app by serving the static files
 // in the dist directory
-app.use(express.static(__dirname + '/dist/mcerp-front'));
+app.use(express.static(__dirname + '/dist/challenge-scotiabank'));
 
 // For all GET requests, send back index.html
 // so that PathLocationStrategy can be used
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/mcerp-front/index.html'));
+  res.sendFile(path.join(__dirname + '/dist/challenge-scotiabank/index.html'));
 });
 
 // Start the app by listening on the default
