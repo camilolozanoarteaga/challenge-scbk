@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  private ISLOGED_ITEM = 'isLoged';
+  private isLoged: string = localStorage.getItem(this.ISLOGED_ITEM);
+
   loginForm: FormGroup;
   feedbackMessage: string = null;
 
@@ -18,7 +21,11 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.isLoged === 'true') {
+      this.router.navigate(['/dashboard']);
+    }
+  }
 
   get formlogin(): any {
     return this.loginForm.controls;
@@ -43,6 +50,7 @@ export class LoginComponent implements OnInit {
       this.loginForm.value.username === 'admin' &&
       this.loginForm.value.password === 'admin123'
     ) {
+      localStorage.setItem('isLoged', 'true');
       this.router.navigate(['/dashboard']);
     } else {
       this.feedbackMessage = 'Su usuario no existe.';

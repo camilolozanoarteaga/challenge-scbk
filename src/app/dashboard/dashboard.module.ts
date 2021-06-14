@@ -15,7 +15,7 @@ import { SharedModule } from '../shared/shared.module';
     AccountsListComponent,
     AccountMovementComponent,
   ],
-  imports: [CommonModule, RouterModule.forRoot(DashboardRoutes), SharedModule],
+  imports: [CommonModule, RouterModule.forChild(DashboardRoutes), SharedModule],
   bootstrap: [DashboardComponent],
 })
 export class DashboardModule {}
