@@ -24,21 +24,21 @@ export class ApiService {
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
+      'Content-Security-Policy':
+        "default-src 'self'; script-src https://3e03da03-b5c5-46b2-ad4b-662656e20608.mock.pstmn.io/; data: https://3e03da03-b5c5-46b2-ad4b-662656e20608.mock.pstmn.io/ ",
     }),
     responseType: 'text' as 'json',
   };
 
   constructor(private http: HttpClient) {}
 
-  getAccounts(): Observable<any> {
+  getAccounts(): Observable<AccountsInformation[]> {
     const url = `${this.BASE_URL}accounts`;
-    return this.http.get(url, this.httpOptions);
-
-    // .pipe(
-    //   map((data: Accounts) => this.parseJson(data.toString())),
-    //   map((data: Accounts) => data.cuentas),
-    //   catchError(this.handleError) // then handle the error
-    // );
+    return this.http.get<Accounts>(url, this.httpOptions).pipe(
+      map((data: Accounts) => this.parseJson(data.toString())),
+      map((data: Accounts) => data.cuentas),
+      catchError(this.handleError) // then handle the error
+    );
   }
 
   getAccountMovement(): Observable<MovementAccountInformation[]> {

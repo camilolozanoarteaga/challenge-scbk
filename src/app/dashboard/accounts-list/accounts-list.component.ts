@@ -13,11 +13,10 @@ export class AccountsListComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.apiService.getAccounts().subscribe((data) => console.log(data));
-
-    this.accountsList = [];
-    // .subscribe(
-    //   (payload: AccountsInformation[]) => (this.accountsList = payload)
-    // );
+    this.apiService
+      .getAccounts()
+      .subscribe(
+        (payload: AccountsInformation[]) => (this.accountsList = payload)
+      );
   }
 }
