@@ -12,23 +12,11 @@
       <th>Monto movimiento</th>
       <th>Descripción</th>
     </tr>
-    <tr>
-      <td>Alfreds Futterkiste</td>
-      <td>Maria Anders</td>
-      <td>Germany</td>
-      <td>Germany</td>
-    </tr>
-    <tr>
-      <td>Alfreds Futterkiste</td>
-      <td>Maria Anders</td>
-      <td>Germany</td>
-      <td>Germany</td>
-    </tr>
-    <tr>
-      <td>Alfreds Futterkiste</td>
-      <td>Maria Anders</td>
-      <td>Germany</td>
-      <td>Germany</td>
+    <tr *ngFor="let movement of movementAccountList">
+      <td>{{ movement.cuentaId }}</td>
+      <td>{{ movement.fechaTransaccion }}</td>
+      <td>{{ movement.montroTransaccion | currency }}</td>
+      <td>{{ movement.descripcion }}</td>
     </tr>
   </table>
 </section>

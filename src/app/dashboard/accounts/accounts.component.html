@@ -1,8 +1,12 @@
 <div class="card">
-  <div class="card__title">&#9679; {{ accountNumber }}</div>
-  <div class="card__subtitle">{{ mony | currency }}</div>
-  <div class="card__content">Saldo disponible</div>
+  <div class="card__title">
+    &#9679; {{ account.tipoCuenta }} - {{ account.cuentaId }}
+  </div>
+  <div class="card__subtitle">{{ account.valorDisponible | currency }}</div>
+  <div class="card__content">{{ account.estado }}</div>
   <div class="card__content-link">
-    <a routerLink="/dashboard/accounts-detail/1">VER DETALLE</a>
+    <a routerLink="/dashboard/accounts-detail/{{ account.cuentaId }}"
+      >VER DETALLE</a
+    >
   </div>
 </div>

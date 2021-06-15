@@ -4,16 +4,10 @@
 <section>
   <div class="container">
     <div class="container-grid">
-      <app-accounts></app-accounts>
-      <app-accounts></app-accounts>
-      <app-accounts></app-accounts>
-      <app-accounts></app-accounts>
-      <app-accounts></app-accounts>
-      <app-accounts></app-accounts>
-      <app-accounts></app-accounts>
-      <app-accounts></app-accounts>
-      <app-accounts></app-accounts>
-      <app-accounts></app-accounts>
+      <app-accounts
+        *ngFor="let account of accountsList"
+        [account]="account"
+      ></app-accounts>
     </div>
   </div>
 </section>

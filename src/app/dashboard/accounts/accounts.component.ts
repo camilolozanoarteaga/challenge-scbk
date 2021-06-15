@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AccountsInformation } from 'src/app/core/models/account.model';
 
 @Component({
   selector: 'app-accounts',
@@ -7,13 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./accounts.component.css'],
 })
 export class AccountsComponent implements OnInit {
+  @Input() account: AccountsInformation;
   accountNumber: string;
   mony: number;
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {
-    this.accountNumber = '0092 - Cuenta de ahorros';
-    this.mony = 3000500;
-  }
+  ngOnInit(): void {}
 }
