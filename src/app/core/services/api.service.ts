@@ -51,6 +51,3 @@ export class ApiService {
     return JSON.parse(jsonData);
   }
 }
-// https://api.mocklets.com/ext/
-
-// https://api.mocklets.com/ext/
