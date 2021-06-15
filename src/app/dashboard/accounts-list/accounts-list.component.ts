@@ -13,7 +13,7 @@ export class AccountsListComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.apiService.getAccounts();
+    this.apiService.getAccounts().subscribe((data) => console.log(data));
 
     this.accountsList = [];
     // .subscribe(
