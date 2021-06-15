@@ -20,7 +20,7 @@ export class ApiService {
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Content-Security-Policy': `script-src 'self' ${this.BASE_URL}`,
+      'Content-Security-Policy': "default-src 'none'",
     }),
     responseType: 'text' as 'json',
   };
