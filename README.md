@@ -2,6 +2,13 @@
 
 Versión del proyecto 1.0, [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
 
+## Ingreso en local (Pruebas locales)
+
+```
+  ng serve -o 
+  ng serve --prod  -o
+```
+
 ## URL acceso heroku
 
 [Acceso web prueba](https://challenge-scotiabank.herokuapp.com/)
