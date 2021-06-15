@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { AccountsListComponent } from './accounts-list.component';
 
@@ -8,9 +9,9 @@ describe('AccountsListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AccountsListComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule],
+      declarations: [AccountsListComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

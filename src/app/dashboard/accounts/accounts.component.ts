@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { AccountsInformation } from 'src/app/core/models/account.model';
 
 @Component({
@@ -8,11 +7,9 @@ import { AccountsInformation } from 'src/app/core/models/account.model';
   styleUrls: ['./accounts.component.css'],
 })
 export class AccountsComponent implements OnInit {
-  @Input() account: AccountsInformation;
-  accountNumber: string;
-  mony: number;
+  @Input() account: AccountsInformation = null;
 
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }
