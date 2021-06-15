@@ -14,7 +14,8 @@ import {
   providedIn: 'root',
 })
 export class ApiService {
-  private BASE_URL = 'https://run.mocky.io/v3/';
+  private BASE_URL =
+    'https://3e03da03-b5c5-46b2-ad4b-662656e20608.mock.pstmn.io/';
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -26,7 +27,7 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getAccounts(): Observable<AccountsInformation[]> {
-    const url = `${this.BASE_URL}a38ba3ba-1d52-4c57-8e30-c891723ce623`;
+    const url = `${this.BASE_URL}accounts`;
     return this.http.get<Accounts>(url, this.httpOptions).pipe(
       map((data: Accounts) => this.parseJson(data.toString())),
       map((data: Accounts) => data.cuentas)
@@ -34,7 +35,7 @@ export class ApiService {
   }
 
   getAccountMovement(): Observable<MovementAccountInformation[]> {
-    const url = `${this.BASE_URL}51df19f5-4499-4b0f-8787-4be2955c151d`;
+    const url = `${this.BASE_URL}movements`;
     return this.http.get<MovementAccount>(url, this.httpOptions).pipe(
       map((data: MovementAccount) => this.parseJson(data.toString())),
       map((data: MovementAccount) => data.movimientos)
@@ -46,3 +47,6 @@ export class ApiService {
     return JSON.parse(jsonData);
   }
 }
+// https://api.mocklets.com/ext/
+
+// https://api.mocklets.com/ext/
