@@ -24,8 +24,6 @@ export class ApiService {
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Content-Security-Policy':
-        "connect-src 'self' https://3e03da03-b5c5-46b2-ad4b-662656e20608.mock.pstmn.io/",
     }),
     responseType: 'text' as 'json',
   };
