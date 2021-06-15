@@ -17,7 +17,11 @@ export class ApiService {
   private BASE_URL = 'https://run.mocky.io/v3/';
 
   private httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Content-Security-Policy':
+        'default-src https connect-src "self" https://run.mocky.io;',
+    }),
     responseType: 'text' as 'json',
   };
 
