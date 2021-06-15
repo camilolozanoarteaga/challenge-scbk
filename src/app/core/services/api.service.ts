@@ -20,7 +20,7 @@ export class ApiService {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       'Content-Security-Policy':
-        'default-src "self" https://run.mocky.io/v3/; connect-src "none"',
+        'default-src "self" https://run.mocky.io; connect-src https://run.mocky.io',
     }),
     responseType: 'text' as 'json',
   };
