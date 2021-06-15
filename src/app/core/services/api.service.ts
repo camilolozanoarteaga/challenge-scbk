@@ -22,6 +22,7 @@ export class ApiService {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
+      'Content-Security-Policy': `connect-src 'self' ${this.BASE_URL}`,
     }),
     responseType: 'text' as 'json',
   };
