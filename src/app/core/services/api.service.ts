@@ -30,13 +30,15 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  getAccounts(): Observable<AccountsInformation[]> {
+  getAccounts(): Observable<any> {
     const url = `${this.BASE_URL}accounts`;
-    return this.http.get<Accounts>(url, this.httpOptions).pipe(
-      map((data: Accounts) => this.parseJson(data.toString())),
-      map((data: Accounts) => data.cuentas),
-      catchError(this.handleError) // then handle the error
-    );
+    return this.http.get(url, this.httpOptions);
+
+    // .pipe(
+    //   map((data: Accounts) => this.parseJson(data.toString())),
+    //   map((data: Accounts) => data.cuentas),
+    //   catchError(this.handleError) // then handle the error
+    // );
   }
 
   getAccountMovement(): Observable<MovementAccountInformation[]> {
