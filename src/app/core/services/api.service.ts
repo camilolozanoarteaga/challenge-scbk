@@ -20,7 +20,8 @@ export class ApiService {
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin':
+        'https://3e03da03-b5c5-46b2-ad4b-662656e20608.mock.pstmn.io',
       'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
       'Content-Security-Policy': `connect-src 'self' ${this.BASE_URL}`,
     }),
