@@ -50,8 +50,8 @@ export class LoginComponent implements OnInit {
       this.loginForm.value.username === 'admin' &&
       this.loginForm.value.password === 'admin123'
     ) {
-      localStorage.setItem('isLoged', 'true');
       this.router.navigate(['/dashboard']);
+      localStorage.setItem('isLoged', 'true');
     } else {
       this.feedbackMessage = 'Su usuario no existe.';
     }
